@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const netflixRoutes = require('./route/netflixRoute');
 
 
 const app = express();
@@ -14,9 +15,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(log);
-
-app.use("/api/netflix/financialStatement", cardRoutes);
+app.use("/api/netflix/financialStatement", netflixRoutes);
 
 
 module.exports = app;

@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const config = require("../../netflixFinancialStatement.json");
+const financialStatement = require("../../netflixFinancialStatement.json");
 
 
-router.get("/all", auth, (req, res, next)=>{
-    
+router.get("/all", (req, res, next)=>{
+    res.status(200).json(financialStatement);
 })
 
 
